@@ -8,6 +8,9 @@ module.exports = {
       gridTemplateRows: {
         layout: 'auto 1fr auto',
       },
+      gridTemplateColumns: {
+        form: '3fr 2fr',
+      },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
       },
