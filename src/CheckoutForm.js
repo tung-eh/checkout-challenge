@@ -31,7 +31,7 @@ const CheckoutForm = () => {
         />
         <Input label="Address" icon="home" placeholder="Your address.." />
         <Input label="City" icon="location_city" placeholder="Your city.." />
-        <div className="grid grid-cols-2 gap-8">
+        <div className="grid grid-cols-2 gap-8 mb-2">
           <Input label="Country" icon="public" placeholder="Your country.." />
           <Input
             label="Postal code"
@@ -39,10 +39,11 @@ const CheckoutForm = () => {
             placeholder="Your postal code.."
           />
         </div>
-        <input type="checkbox" />
-        Save this information for next time
+        <Input type="checkbox" label="Save this information for next time" />
         <div className="flex justify-end">
-          <button>Continue</button>
+          <button className="rounded-xl bg-yellow-500 hover:bg-yellow-600 font-bold text-white py-4 px-12">
+            Continue
+          </button>
         </div>
       </div>
       <div>Items</div>
