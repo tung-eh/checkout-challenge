@@ -1,10 +1,12 @@
 import React from 'react'
 
+import CartItems from './CartItems'
 import Input from './Input'
 
 const CheckoutForm = () => {
   return (
-    <div className="grid grid-cols-form gap-32 py-14 mb-20">
+    <div className="grid grid-cols-form grid-flow-col-dense items-start gap-28 py-14 mb-20">
+      <CartItems className="md:col-start-2" />
       <div>
         <h2 className="font-bold text-lg text-gray-700 mb-3">
           Contact information
@@ -46,7 +48,6 @@ const CheckoutForm = () => {
           </button>
         </div>
       </div>
-      <div>Items</div>
     </div>
   )
 }

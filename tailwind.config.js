@@ -9,7 +9,7 @@ module.exports = {
         layout: 'auto 1fr auto',
       },
       gridTemplateColumns: {
-        form: '3fr 2fr',
+        form: '5fr 4fr',
       },
       fontFamily: {
         sans: ['Montserrat', 'sans-serif'],
