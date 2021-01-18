@@ -6,7 +6,7 @@ import Input from './Input'
 const CheckoutForm = () => {
   return (
     <form
-      className="grid grid-cols-form grid-flow-col-dense items-start gap-28 py-14 mb-20"
+      className="grid md:grid-cols-form md:grid-flow-col-dense items-start gap-8 md:gap-28 py-14 mb-20"
       onSubmit={(e) => e.preventDefault()}
     >
       <CartItems className="md:col-start-2" />

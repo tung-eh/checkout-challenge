@@ -22,12 +22,12 @@ const MAP = {
   remove: Remove,
 }
 
-const Icon = ({ name, ...props }) => {
+const Icon = ({ className, name, ...props }) => {
   const Component = MAP[name]
 
   if (!Component) return null
 
-  return <Component {...props} />
+  return <Component className={'w-6 h-6 ' + className} {...props} />
 }
 
 export default Icon
