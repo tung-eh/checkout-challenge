@@ -6,16 +6,16 @@ import Icon from './Icon'
 const generateId = () => '_' + Math.random().toString(36).substr(2, 9)
 
 const TextInput = ({ label, icon, ...props }) => (
-  <div className="relative flex flex-col mb-4">
-    <label className="font-bold text-xs text-gray-500 mb-1" htmlFor={props.id}>
+  <div className="relative flex flex-col text-gray-500 focus-within:text-gray-700 mb-4">
+    <label className="font-bold text-xs  mb-1" htmlFor={props.id}>
       {label}
     </label>
     <input
-      className="border border-gray-500 placeholder-gray-800 rounded-xl outline-none font-bold text-gray-700  p-4 pl-14"
+      className="border border-gray-500 focus:ring-1 focus:ring-gray-700 placeholder-gray-800 rounded-xl outline-none font-bold text-gray-700 p-4 pl-14"
       {...props}
     />
     <Icon
-      className="absolute bottom-4 left-4 fill-current text-gray-500 pointer-events-none"
+      className="absolute bottom-4 left-4 fill-current  pointer-events-none"
       name={icon}
       style={{ marginBottom: '1px' }} //input border
     />
