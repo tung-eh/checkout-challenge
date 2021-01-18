@@ -1,6 +1,7 @@
 import React from 'react'
 
 import Icon from './Icon'
+import countryList from './countryList'
 
 // Copy from https://gist.github.com/gordonbrander/2230317
 const generateId = () => '_' + Math.random().toString(36).substr(2, 9)
@@ -22,6 +23,33 @@ const TextInput = ({ label, icon, ...props }) => (
   </div>
 )
 
+const CountrySelect = ({ label, icon, ...props }) => (
+  <div className="relative flex flex-col text-gray-500 focus-within:text-gray-700 mb-4">
+    <label className="font-bold text-xs  mb-1" htmlFor={props.id}>
+      {label}
+    </label>
+    <select
+      className="appearance-none border border-gray-500 focus:ring-1 focus:ring-gray-700 placeholder-gray-800 rounded-xl outline-none font-bold text-gray-700 overflow-ellipsis p-4 px-14"
+      {...props}
+    >
+      {countryList.map((country, index) => (
+        <option value={index}>{country}</option>
+      ))}
+    </select>
+    <Icon
+      className="absolute bottom-4 left-4 fill-current  pointer-events-none"
+      name={icon}
+      style={{ marginBottom: '1px' }} //input border
+    />
+    <div
+      className="absolute bottom-4 right-4 bg-gray-200 rounded fill-current  pointer-events-none"
+      style={{ marginBottom: '1px' }} //input border
+    >
+      <Icon name="keyboard_arrow_down" />
+    </div>
+  </div>
+)
+
 const CheckboxInput = ({ label, ...props }) => (
   <div className="flex items-center mb-4">
     <input
@@ -40,6 +68,7 @@ const CheckboxInput = ({ label, ...props }) => (
 
 const MAP_COMPONENT = {
   checkbox: CheckboxInput,
+  country: CountrySelect,
 }
 
 const Input = ({ id, ...props }) => {
