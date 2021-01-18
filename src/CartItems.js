@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 
+import NumberInput from './NumberInput'
 import bagImg from './images/photo1.png'
 import shoesImg from './images/photo2.png'
 
@@ -17,7 +18,7 @@ const shippingFee = 19
 const Item = ({ name, image, originalPrice, price, count, setCount }) => (
   <div className="flex">
     <img className="rounded-xl w-32 mr-4" src={image} alt="item" />
-    <div className="flex flex-col justify-between">
+    <div className="flex flex-col justify-between items-start">
       <div>
         <div className="font-bold text-gray-600">{name}</div>
         <div className="flex items-center font-bold text-yellow-500">
@@ -25,15 +26,9 @@ const Item = ({ name, image, originalPrice, price, count, setCount }) => (
           <span className="text-gray-600 text-xs line-through ml-3">
             ${originalPrice}
           </span>
-        </div>{' '}
+        </div>
       </div>
-      <input
-        className="border border-gray-500 focus:ring-1 focus:ring-gray-700 outline-none bg-transparent p-3 rounded-xl font-bold text-gray-700 w-32"
-        type="number"
-        min={1}
-        value={count}
-        onChange={(e) => setCount(e.target.value)}
-      />
+      <NumberInput value={count} onChange={setCount} />
     </div>
   </div>
 )
